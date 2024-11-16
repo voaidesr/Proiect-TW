@@ -49,10 +49,10 @@ body {
 .slide {
     height: 100vh; /* Full screen height */
     width: 100vw; /* Full screen width */
-    scroll-snap-align: start; /* Snap slides to the top of the viewport */
     position: relative; /* Position for ::before pseudo-element */
     background-size: cover; /* Ensure the background image covers the slide */
     background-position: center;
+    background-attachment: fixed;
     display: grid; /* Grid layout for internal content */
     grid-template-rows: 25% 75%;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5)
@@ -152,12 +152,89 @@ header h1{
 main {
     display: grid;
     grid-template-columns: 12.5% 75% 12.5%;
-    grid-template-rows: 12.5% 75% 12.5%;
+    grid-template-rows: 15% 70% 15%;
     z-index: 1;
+    position: relative;
 }
 
 .contents{
     grid-column: 2;
     grid-row: 2;
 }
+
+.scroll-button {
+    all: unset; /* Removes default button styling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em; /* Adjust the size */
+    height: 5em;
+    cursor: pointer;
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+  }
+  
+  .arrow {
+    position: relative;
+    width: 5em; /* Adjust size */
+    height: 5em;
+    transform: rotate(90deg); /* Set the initial rotation */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    animation: alert 4s linear 3s infinite;
+  }
+
+.arrow::before, .arrow::after{
+    content: "";
+    background-color: var(--violet);
+    position: absolute;
+    width: 2em;
+    height: 0.2em;
+    border-radius: 1em;
+    transition: transform 0.25s ease-in;
+}
+
+.arrow::before{
+    transform: rotate(45deg);
+    transform-origin: 95% center;
+}
+
+.arrow::after{
+    transform: rotate(-45deg);
+    transform-origin: 95% center; 
+}
+
+.arrow:hover::before {
+    transform: rotate(35deg); /* More acute angle on hover */
+  }
+  
+  .arrow:hover::after {
+    transform: rotate(-35deg); /* More acute angle on hover */
+  }
+
+  @keyframes alert {
+    0%{
+        transform: rotate(90deg) translate(0);
+    }
+    87.5%{
+        transform: rotate(90deg) translate(0);
+    }
+    90%{
+        transform: rotate(90deg) translateX(1em);
+    }
+    92.5%{
+        transform: rotate(90deg) translateX(0.5em);
+    }
+    95%{
+        transform: rotate(90deg) translateX(1em);
+    }
+    100%{
+        transform: rotate(90deg) translateX(0);
+    }
+  }
 
