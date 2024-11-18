@@ -37,6 +37,11 @@ body {
     overflow: hidden;
 }
 
+.slides::-webkit-scrollbar {
+    width: 0px;               /* width of the entire scrollbar */
+  }
+  
+
 .slides {
     height: 100vh;
     width: 100vw; /* Full screen width */
@@ -54,7 +59,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     display: grid; /* Grid layout for internal content */
-    grid-template-rows: 25% 75%;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5)
 }
 
@@ -69,6 +73,18 @@ body {
     z-index: 1; /* Ensure it sits above the background */
 }
 
+.slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the shadow */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+    pointer-events: none; /* Ensures the shadow doesn’t block interactions */
+    z-index: 2;
+  }
+
 .slide > * {
     position: relative; /* Ensure content is above the overlay */
     z-index: 2;
@@ -78,6 +94,7 @@ body {
 
 #one{
     background-image: url(./photos/background1.jpg);
+    grid-template-rows: 25% 75%;
 }
 
 #two{
@@ -139,9 +156,8 @@ header h1{
 }
 
 .dropdown:hover .dropdown-content {
-    visibility: visible !important;
+    visibility: visible;
 }
-
 
 .dropdown:hover .dropdownbutton {
     color: var(--accentpink);
@@ -196,7 +212,7 @@ main {
     width: 2em;
     height: 0.2em;
     border-radius: 1em;
-    transition: transform 0.25s ease-in;
+    transition: transform 0.3s linear;
 }
 
 .arrow::before{
@@ -211,10 +227,12 @@ main {
 
 .arrow:hover::before {
     transform: rotate(35deg); /* More acute angle on hover */
+    background-color: rgba(94, 47, 100, 0.9);
   }
   
   .arrow:hover::after {
     transform: rotate(-35deg); /* More acute angle on hover */
+    background-color: rgba(94, 47, 100, 0.9);
   }
 
   @keyframes alert {
