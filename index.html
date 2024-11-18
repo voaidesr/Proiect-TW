@@ -12,7 +12,7 @@
     <div class = "slides">
       <section class = "slide" id = "one">
         <header>
-          <h1>Your personal planetarium</h1>
+          <h1>NYX <span>The skyes, at your desk</span> </h1>
           <div class = "dropdown">
               <button class = "dropdownbutton">
                 Menu
@@ -29,7 +29,7 @@
             </button>
           </div>
         </header>
-        <main>
+        <main class = "first-main">
           <div class = "contents">
             <h2>The sky, at your finger tips</h2>
             <p>Explore the universe in stunning 3D. Navigate constellations, uncover the mysteries of the stars, and experience the cosmos like never before—all from the comfort of your screen.</p>
@@ -41,21 +41,32 @@
       </section>
       <section class="slide" id = "two">
         <main>
-          <p>this is it</p>
+          <div class="card-right">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          <button class="scroll-button" onclick="scrollToNextSlide('three')">
+            <div class = "arrow"></div>
+          </button>
         </main>
       </section>
-    </div>
       <section class="slide" id = "three">
         <main>
-          <p>this is it</p>
+          <div class="card-left">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          <button class="scroll-button" onclick="scrollToNextSlide('four')">
+            <div class = "arrow"></div>
+          </button>
         </main>
       </section>
-    </div>
       <section class="slide" id = "four">
         <main>
           <p>this is it</p>
         </main>
       </section>
+      <footer class="footer" id = "footer">
+        <a href="mailto:voaides.r@yahoo.com"><img src ="./photos/github.png"></a>
+      </footer>
     </div>
     <script type="text/javascript" src="./scripts/scrolling.js"></script>
   </body>

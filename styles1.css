@@ -38,11 +38,11 @@ body {
 }
 
 .slides::-webkit-scrollbar {
-    width: 0px;               /* width of the entire scrollbar */
+    width: 0px;               /* eliminating the scrollbar */
   }
   
-
 .slides {
+    color: inherit;
     height: 100vh;
     width: 100vw; /* Full screen width */
     scroll-snap-type: y mandatory; /* Vertical snap behavior */
@@ -51,7 +51,24 @@ body {
     position: relative; /* For absolute positioning of pseudo-elements */
 }
 
+.footer{
+    height: 40vh;
+    width: 100vw;
+    scroll-snap-type: start;
+    background-color: var(--spaceblue);
+}
+
+.footer img{
+    height: 3em;
+    width: 3em;
+}
+
+a {
+    text-decoration: none;
+}
+
 .slide {
+    color: inherit;
     height: 100vh; /* Full screen height */
     width: 100vw; /* Full screen width */
     position: relative; /* Position for ::before pseudo-element */
@@ -59,7 +76,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     display: grid; /* Grid layout for internal content */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5)
 }
 
 .slide::before {
@@ -79,7 +95,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20px; /* Height of the shadow */
+    height: 10px; /* Height of the shadow */
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
     pointer-events: none; /* Ensures the shadow doesn’t block interactions */
     z-index: 2;
@@ -101,7 +117,16 @@ body {
     background-image: url(./photos/background2.jpg);
 }
 
+#three{
+    background-image: url(./photos/background3.jpg);
+}
+
+#four{
+    background-image: url(./photos/background4.jpg);
+}
+
 header{
+    color: inherit;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     padding: 1em 3em 1em 3em;
@@ -112,11 +137,22 @@ header{
 }
 
 header h1{  
+    color: inherit;
     grid-column: 1 / 9;
     justify-self: start;
 }
 
+header h1 span{
+    color: inherit;
+    top: 1em;
+    left:-1em;
+    position: relative;
+    font-size: x-small;
+    font-style: italic;
+}
+
 .dropdown{
+    color: inherit;
     grid-column: span 1;
     justify-self: end;
     z-index: 10000;
@@ -165,17 +201,53 @@ header h1{
     transition: 0.5s;
 }
 
-main {
+main.first-main {
+    color: inherit;
     display: grid;
-    grid-template-columns: 12.5% 75% 12.5%;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 15% 70% 15%;
+    z-index: 1;
+    position: relative;
+}
+
+main{
+    color: inherit;
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
     grid-template-rows: 15% 70% 15%;
     z-index: 1;
     position: relative;
 }
 
 .contents{
+    color: inherit;
     grid-column: 2;
     grid-row: 2;
+}
+
+.card-right{
+    grid-column: 3;
+    grid-row: span 3;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    background-color: #011b45;
+    border-left: 0.3em solid var(--violet);
+}
+
+.card-left{
+    grid-column: 1;
+    grid-row: span 3;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    background-color: #011b45;
+    border-right: 0.3em solid var(--violet);
+}
+
+.card-right p, .card-left p {
+    text-align: left;
+    margin: 2em;
 }
 
 .scroll-button {
