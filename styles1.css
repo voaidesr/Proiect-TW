@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&display=swap');
 
-/*
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 1000
-
-.cairo-<uniquifier> {
-  font-family: "Cairo", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
-}
-*/
 :root{
     --spaceblue: #011b45;
     --darkerblue: #02132e;
@@ -71,7 +58,7 @@ body {
 .footer img{
     height: 3em;
     width: 3em;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .footer img:hover{
@@ -87,6 +74,11 @@ body {
 #mail{
     grid-row: 2;
     grid-column: 6;
+}
+
+.footer > p{
+    grid-row: 3;
+    grid-column: 4/8;
 }
 
 a {
@@ -221,9 +213,8 @@ header h1 span{
     visibility: visible;
 }
 
-.dropdown:hover .dropdownbutton {
+.dropdown:hover .dropdownbutton, .dropdown:hover .dropdownbutton>a {
     color: var(--accentpink);
-    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
     transition: 0.5s;
 }
 
@@ -284,6 +275,7 @@ main{
     display: flex;
     justify-items: flex-start;
     align-items: center;
+    border-top: 0.3em solid var(--violet);
 }
 
 .card-right p, .card-left p, .card-down p {
