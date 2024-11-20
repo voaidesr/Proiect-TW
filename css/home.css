@@ -93,6 +93,7 @@ a {
     background-size: cover; /* Ensure the background image covers the slide */
     background-position: center;
     background-attachment: fixed;
+    background-color: var(--spaceblue);
     display: grid; /* Grid layout for internal content */
 }
 
@@ -127,20 +128,20 @@ a {
 }
 
 #one{
-    background-image: url(./photos/background1.jpg);
+    background-image: url(../photos/background1.jpg);
     grid-template-rows: 25% 75%;
 }
 
 #two{
-    background-image: url(./photos/background2.jpg);
+    background-image: url(../photos/background2.jpg);
 }
 
 #three{
-    background-image: url(./photos/background3.jpg);
+    background-image: url(../photos/background3.jpg);
 }
 
 #four{
-    background-image: url(./photos/background4.jpg);
+    background-image: url(../photos/background4.jpg);
 }
 
 header{
