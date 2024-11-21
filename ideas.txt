@@ -1,6 +1,0 @@
-1. Multiple files
-    a. Introductory file - general information, navigation bar (drop-down)
-    b. Planetarium - stellarium type
-    c. Resources
-    d. Spherical representation (embed one that already exists)
-2. Create dark and light-mode, dark-mode and high-contrast
