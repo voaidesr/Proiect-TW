@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +25,11 @@
           </div>
           <div class = "dropdown contact">
             <button class = "dropdownbutton">
-              <a href="#footer">Contact</a>
+              Contact
             </button>
           </div>
         </header>
-        <main class = "first-main">
+        <div class = "first main">
           <div class = "contents">
             <h2>The sky, at your finger tips</h2>
             <p>Explore the universe in stunning 3D. Navigate constellations, uncover the mysteries of the stars, and experience the cosmos like never before—all from the comfort of your screen.</p>
@@ -37,41 +37,42 @@
           <button class="scroll-button" onclick="scrollToNextSlide('two')">
             <div class = "arrow"></div>
           </button>
-        </main>
+        </div>
       </section>
       <section class="slide" id = "two">
-        <main>
+        <div class = "main">
           <div class="card-right">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
+          <!--Trebuie sa transform buton in div, eroare: div nu poate fi copilt pt buton-->
           <button class="scroll-button" onclick="scrollToNextSlide('three')">
             <div class = "arrow"></div>
           </button>
-        </main>
+        </div>
       </section>
       <section class="slide" id = "three">
-        <main>
+        <div class ="main">
           <div class="card-left">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
           <button class="scroll-button" onclick="scrollToNextSlide('four')">
             <div class = "arrow"></div>
           </button>
-        </main>
+        </div>
       </section>
       <section class="slide" id = "four">
-        <main>
+        <div class = "main">
           <div class = "card-down">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
-        </main>
+        </div>
       </section>
       <footer class="footer" id = "footer">
-        <a href="mailto:voaides.r@yahoo.com" id = "mail"><img src ="../photos/mail.png"></a>
-        <a href ="https://github.com/voaidesr" id = "github"><img src="../photos/github.png"></a>
+        <a href="mailto:voaides.r@yahoo.com" id = "mail"><img src ="../photos/mail.png" alt="mail"></a>
+        <a href ="https://github.com/voaidesr" id = "github"><img src="../photos/github.png" alt="github"></a>
         <p>© 2024 Voaides Robert. All rights reserved.</p>
       </footer>
     </div>
-    <script type="text/javascript" src="../scripts/scrolling.js"></script>
+    <script src="../scripts/scrolling.js"></script>
   </body>
 </html>

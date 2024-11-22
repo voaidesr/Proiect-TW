@@ -43,7 +43,6 @@ body {
 .footer{
     height: 40vh;
     width: 100vw;
-    scroll-snap-type: start;
     background-color: var(--ligtherblue);
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -219,7 +218,7 @@ header h1 span{
     transition: 0.5s;
 }
 
-main.first-main {
+.first.main {
     color: inherit;
     display: grid;
     grid-template-columns: 25% 50% 25%;
@@ -228,7 +227,7 @@ main.first-main {
     position: relative;
 }
 
-main{
+.main{
     color: inherit;
     display: grid;
     grid-template-columns: 35% 30% 35%;
@@ -263,7 +262,7 @@ main{
     border-right: 0.3em solid var(--violet);
 }
 
-#four > main{
+#four > .main{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 49.8% 50.2%;
@@ -385,3 +384,8 @@ main{
     text-align: justify;
 }
 
+@media screen and (max-width: 600px){
+    .dropdown{
+        visibility: hidden;
+    }
+}
