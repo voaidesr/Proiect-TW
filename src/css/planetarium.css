@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --spaceblue: #011b45;
+    --darkerblue: #02132e;
+    --ligtherblue: #042252;
+    --violet: #5e2f64;
+    --lighterviolet: #9c6ba8;
+    --lighterlighterviolet: #ac7bb8;
+    --accentpink: #ffa8e2;
+    --silver: #d9d9d9;
+    --moonglow: #f4f4f4;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#bottom-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#toggle-menu {
+    background-color: var(--darkerblue);
+    color: var(--moonglow);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#toggle-menu:hover {
+    background-color: var(--moonglow); /* Swap background and text color */
+    color: var(--darkerblue);
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow for depth effect */
+}
+
+
+#menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background-color: rgba(2, 19, 46, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#menu.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+#menu button {
+    background-color: var(--lighterviolet);
+    color: var(--darkerblue);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "Cairo", sans-serif;
+    font-weight: bolder;
+    transition: background-color 0.2s ease;
+}
+
+#menu button:hover {
+    background-color: var(--lighterlighterviolet);
+}
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid black;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+canvas {
+    display: block;
+    /* Removes extra whitespace */
+    position: absolute;
+    /* Prevents layout issues */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Makes canvas fit the viewport width */
+    height: 100%;
+    /* Makes canvas fit the viewport height */
+}

@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --spaceblue: #011b45;
+    --darkerblue: #02132e;
+    --ligtherblue: #042252;
+    --violet: #5e2f64;
+    --lighterviolet: #9c6ba8;
+    --accentpink: #ffa8e2;
+    --silver: #d9d9d9;
+    --moonglow: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--moonglow);
+    font-family: "Cairo", sans-serif;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+}
+
+.slides::-webkit-scrollbar {
+    width: 0px;
+    /* eliminating the scrollbar */
+}
+
+.slides {
+    color: inherit;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    /* Allow vertical scrolling */
+    overflow-x: hidden;
+    position: relative;
+    /* For absolute positioning of pseudo-elements */
+}
+
+.footer {
+    height: 40vh;
+    width: 100vw;
+    background-color: var(--ligtherblue);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    column-gap: 2em;
+}
+
+.footer img {
+    height: 3em;
+    width: 3em;
+    transition: 0.2s;
+}
+
+.footer img:hover {
+    height: 2.7em;
+    width: 2.7em;
+}
+
+#github {
+    grid-row: 2;
+    grid-column: 5;
+}
+
+#mail {
+    grid-row: 2;
+    grid-column: 6;
+}
+
+.footer>p {
+    grid-row: 3;
+    grid-column: 4/8;
+}
+
+a {
+    text-decoration: none;
+}
+
+.slide {
+    color: inherit;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    /* Position for ::before pseudo-element */
+    background-size: cover;
+    /* Ensure the background image covers the slide */
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--spaceblue);
+    display: grid;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 27, 69, 0.5);
+    /* Semi-transparent overlay */
+    z-index: 1;
+    /* Ensure it sits above the background */
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    /* Height of the shadow */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+    /* Ensures the shadow doesn’t block interactions */
+    z-index: 2;
+}
+
+.slide>* {
+    position: relative;
+    /* Ensure content is above the overlay */
+    z-index: 2;
+    text-align: center;
+    color: var(--moonglow);
+}
+
+#one {
+    background-image: url(../assets/photos/background1.jpg);
+    grid-template-rows: 25% 75%;
+}
+
+#two {
+    background-image: url(../assets/photos/background2.jpg);
+}
+
+#three {
+    background-image: url(../assets/photos/background3.jpg);
+}
+
+#four {
+    background-image: url(../assets/photos/background4.jpg);
+}
+
+header {
+    color: inherit;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    padding: 1em 3em 1em 3em;
+    margin: 0;
+    justify-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+header h1 {
+    color: inherit;
+    grid-column: 1 / 9;
+    justify-self: start;
+}
+
+header h1 span {
+    color: inherit;
+    top: 1em;
+    left: -1em;
+    position: relative;
+    font-size: x-small;
+    font-style: italic;
+}
+
+.dropdown {
+    color: inherit;
+    grid-column: span 1;
+    justify-self: end;
+    z-index: 10000;
+}
+
+.dropdownbutton {
+    background: transparent;
+    color: var(--moonglow);
+    padding: 16px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: fixed;
+    background-color: rgba(94, 47, 100, 0.7);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    right: 1em;
+    margin-right: 1em;
+}
+
+.dropdown-content a {
+    color: var(--moonglow);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--lighterviolet);
+    transition: 0.5s;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdownbutton,
+.dropdown:hover .dropdownbutton>a {
+    color: var(--accentpink);
+    transition: 0.5s;
+}
+
+.first.main {
+    color: inherit;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 15% 70% 15%;
+    z-index: 1;
+    position: relative;
+}
+
+.main {
+    color: inherit;
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows: 15% 70% 15%;
+    z-index: 1;
+    position: relative;
+}
+
+.contents {
+    color: inherit;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.card-right {
+    grid-column: 3;
+    grid-row: span 3;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    background-color: var(--darkerblue);
+    border-left: 0.3em solid var(--violet);
+}
+
+.card-left {
+    grid-column: 1;
+    grid-row: span 3;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    background-color: var(--darkerblue);
+    border-right: 0.3em solid var(--violet);
+}
+
+#four>.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 49.8% 50.2%;
+}
+
+.card-down {
+    grid-column: span 1;
+    grid-row: 2;
+    background-color: rgb(2, 19, 46, 0.85);
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    border-top: 0.3em solid var(--violet);
+}
+
+.card-right p,
+.card-left p,
+.card-down p {
+    text-align: left;
+    margin: 2em;
+}
+
+.scroll-button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+    cursor: pointer;
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+.arrow {
+    position: relative;
+    width: 5em;
+    height: 5em;
+    transform: rotate(90deg);
+    /* Set the initial rotation */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    animation: alert 4s linear 3s infinite;
+}
+
+.arrow::before,
+.arrow::after {
+    content: "";
+    background-color: var(--violet);
+    position: absolute;
+    width: 2em;
+    height: 0.2em;
+    border-radius: 1em;
+    transition: transform 0.3s linear;
+}
+
+.arrow::before {
+    transform: rotate(45deg);
+    transform-origin: 95% center;
+}
+
+.arrow::after {
+    transform: rotate(-45deg);
+    transform-origin: 95% center;
+}
+
+.arrow:hover::before {
+    transform: rotate(35deg);
+    /* More acute angle on hover */
+    background-color: rgba(94, 47, 100, 0.9);
+}
+
+.arrow:hover::after {
+    transform: rotate(-35deg);
+    /* More acute angle on hover */
+    background-color: rgba(94, 47, 100, 0.9);
+}
+
+@keyframes alert {
+    0% {
+        transform: rotate(90deg) translate(0);
+    }
+
+    87.5% {
+        transform: rotate(90deg) translate(0);
+    }
+
+    90% {
+        transform: rotate(90deg) translateX(1em);
+    }
+
+    92.5% {
+        transform: rotate(90deg) translateX(0.5em);
+    }
+
+    95% {
+        transform: rotate(90deg) translateX(1em);
+    }
+
+    100% {
+        transform: rotate(90deg) translateX(0);
+    }
+}
+
+/* The page about the celestial sphere */
+
+#one-celestial {
+    background-image: url(../assets/photos/background1.jpg);
+}
+
+.celestial header {
+    grid-row: span 1;
+}
+
+.celestial main {
+    grid-row: span 3;
+    justify-items: center;
+    align-items: baseline;
+    grid-template-rows: 42.5% 42.5% 15%
+}
+
+#one-celestial p {
+    grid-row: span 1;
+    grid-column: span 3;
+    margin: 0 30% 0 4em;
+    text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+    .dropdown {
+        visibility: hidden;
+    }
+}
