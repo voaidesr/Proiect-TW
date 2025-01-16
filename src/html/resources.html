@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation Game</title>
+    <link rel="icon" type="image/x-icon" href="../assets/photos/favicon.ico">
+    <link rel="stylesheet" href="../css/resources.css">
+</head>
+
+<body>
+    <div id="loginPopup">
+        <div id="loginForm">
+            <h2>Welcome to the Constellation Game</h2>
+            <input type="text" id="username" placeholder="Enter your username">
+            <button id="loginButton">Login</button>
+            <button id="registerButton">Register</button>
+        </div>
+    </div>
+
+    <div id="gameContainer">
+        <header>
+            <h1>Welcome, <span id="playerName"></span>!</h1>
+            <p id="prompt"></p>
+            <p id="score">Score: 0</p>
+        </header>
+
+        <main>
+            <div id="constellationMap">
+                <!--Regiuni-->
+                <div id = "constellation1" class = "region"></div>
+                <div id = "constellation2" class = "region"></div>
+                <div id = "constellation3" class = "region"></div>
+                <div id = "constellation4" class = "region"></div>
+                <div id = "constellation5" class = "region"></div>
+                <div id = "constellation6" class = "region"></div>
+                <div id = "constellation7" class = "region"></div>
+                <div id = "constellation8" class = "region"></div>
+                <div id = "constellation9" class = "region"></div>
+                <div id = "constellation10" class = "region"></div>
+                <div id = "constellation11" class = "region"></div>
+                <div id = "constellation12" class = "region"></div>
+                <div id = "constellation13" class = "region"></div>
+                <div id = "constellation14" class = "region"></div>
+            </div>
+        </main>
+
+        <aside id="actionBar">
+            <button id="logoutButton">Logout</button>
+            <button id="landingPageButton">Landing Page</button>
+            <button id="clearScoreButton">Clear Score</button>
+        </aside>
+    </div>
+    <script src="../scripts/game.js"></script>
+</body>
+
+</html>
