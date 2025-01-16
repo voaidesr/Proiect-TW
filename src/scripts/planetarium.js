@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import Papa from "papaparse";
 import circle from "../assets/textures/circle.png";
 import px from "../assets/textures/background_textures/px.png";
 import nx from "../assets/textures/background_textures/nx.png";
@@ -189,8 +188,8 @@ constellationsData.Constellations.forEach((constellation) => {
 // toggle pentru constelatii
 let constellationsVisible = true;
 window.addEventListener("keydown", (event) => {
-  if (event.key.toLowerCase() === "c") {
-    // test inital cu "c"
+  if (event.key.toLowerCase() === "t") {
+    // test inital cu "t"
     constellationsVisible = !constellationsVisible;
     constellationObjects.forEach((object) => {
       object.visible = constellationsVisible;
@@ -222,9 +221,8 @@ window.addEventListener("resize", () => {
 
   camera.aspect = width / height;
 
-  // Adjust FOV based on screen width
+  // fov in functie de ecran --> ecran mai mic, fov mai mare (some sort of responsiveness)
   if (width < 768) {
-    // Phones
     camera.fov = 95;
   } else {
     camera.fov = 60;
@@ -260,14 +258,12 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const goToLandingButton = document.getElementById("go-to-landing");
 
-  // Toggle the menu visibility
+  // toggle meniu
   toggleMenuButton.addEventListener("click", () => {
     menu.classList.toggle("hidden");
   });
 
-  // Toggle constellations (existing functionality)
-
-  // Redirect to the landing page
+  // buton landing page
   goToLandingButton.addEventListener("click", () => {
     window.location.href = "index.html";
   });

@@ -46,10 +46,10 @@ body {
 }
 
 #toggle-menu:hover {
-    background-color: var(--moonglow); /* Swap background and text color */
+    background-color: var(--moonglow);
     color: var(--darkerblue);
-    transform: scale(1.1); /* Slightly enlarge the button */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow for depth effect */
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -125,13 +125,9 @@ body {
 
 canvas {
     display: block;
-    /* Removes extra whitespace */
     position: absolute;
-    /* Prevents layout issues */
     top: 0;
     left: 0;
     width: 100%;
-    /* Makes canvas fit the viewport width */
     height: 100%;
-    /* Makes canvas fit the viewport height */
 }

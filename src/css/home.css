@@ -28,7 +28,7 @@ body {
 
 .slides::-webkit-scrollbar {
     width: 0px;
-    /* eliminating the scrollbar */
+    /* elimin scrollbar */
 }
 
 .slides {
@@ -37,10 +37,8 @@ body {
     width: 100vw;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    /* Allow vertical scrolling */
     overflow-x: hidden;
     position: relative;
-    /* For absolute positioning of pseudo-elements */
 }
 
 .footer {
@@ -81,9 +79,7 @@ a {
     height: 100vh;
     width: 100vw;
     position: relative;
-    /* Position for ::before pseudo-element */
     background-size: cover;
-    /* Ensure the background image covers the slide */
     background-position: center;
     background-attachment: fixed;
     background-color: var(--spaceblue);
@@ -98,9 +94,7 @@ a {
     width: 100%;
     height: 100%;
     background-color: rgba(1, 27, 69, 0.5);
-    /* Semi-transparent overlay */
     z-index: 1;
-    /* Ensure it sits above the background */
 }
 
 .slide::after {
@@ -110,16 +104,13 @@ a {
     left: 0;
     width: 100%;
     height: 10px;
-    /* Height of the shadow */
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
     pointer-events: none;
-    /* Ensures the shadow doesn’t block interactions */
     z-index: 2;
 }
 
 .slide>* {
     position: relative;
-    /* Ensure content is above the overlay */
     z-index: 2;
     text-align: center;
     color: var(--moonglow);
@@ -138,8 +129,20 @@ a {
     background-image: url(../assets/photos/background3.jpg);
 }
 
+#three-celestial {
+    background-color: #131d29;
+    background-image: url(../assets/photos/ra_dec.jpg);
+    background-size: contain;
+    background-position: 85%;
+    background-repeat: no-repeat;
+}
+
 #four {
     background-image: url(../assets/photos/background4.jpg);
+}
+
+#two-celestial {
+    background-image: url(../assets/photos/celestialsphere.png);
 }
 
 header {
@@ -239,7 +242,7 @@ header h1 span {
 .contents {
     color: inherit;
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1/3;
 }
 
 .card-right {
@@ -260,6 +263,29 @@ header h1 span {
     align-items: center;
     background-color: var(--darkerblue);
     border-right: 0.3em solid var(--violet);
+}
+
+.container.canvas {
+    grid-column: 1/3;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    background-color: transparent;
+}
+
+.controls {
+    grid-column: 1;
+    grid-row: 3;
+    font-family: "Cairo", sans-serif;
+}
+
+#celestialSphere {
+    height: 60%;
+    width: auto;
+    transform: translateX(-5%);
 }
 
 #four>.main {
@@ -304,7 +330,6 @@ header h1 span {
     width: 5em;
     height: 5em;
     transform: rotate(90deg);
-    /* Set the initial rotation */
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -336,13 +361,11 @@ header h1 span {
 
 .arrow:hover::before {
     transform: rotate(35deg);
-    /* More acute angle on hover */
     background-color: rgba(94, 47, 100, 0.9);
 }
 
 .arrow:hover::after {
     transform: rotate(-35deg);
-    /* More acute angle on hover */
     background-color: rgba(94, 47, 100, 0.9);
 }
 
@@ -372,8 +395,6 @@ header h1 span {
     }
 }
 
-/* The page about the celestial sphere */
-
 #one-celestial {
     background-image: url(../assets/photos/background1.jpg);
 }
@@ -392,13 +413,9 @@ header h1 span {
 #one-celestial p {
     grid-row: span 1;
     grid-column: span 3;
-    margin: 0 30% 0 4em;
-    text-align: justify;
+    text-align: center;
 }
 
-
-
-/* Style for the side menu */
 #side-menu {
     position: fixed;
     top: 0;
@@ -410,11 +427,11 @@ header h1 span {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center; /* Center the child element (ul) vertically */
+    justify-content: center;
     align-items: center;
     padding: 20px;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
-    transform: translateX(0%); /* Start off-screen */
+    transform: translateX(0%);
     transition: transform 0.3s ease;
     z-index: 1000;
 }
@@ -441,7 +458,7 @@ header h1 span {
 }
 
 #side-menu.hidden {
-    transform: translateX(100%); /* Hide menu */
+    transform: translateX(100%);
 }
 
 #close-menu {
@@ -459,7 +476,6 @@ header h1 span {
     background: var(--lighterlighterviolet);
 }
 
-/* Icon position */
 #drpicon {
     visibility: hidden;
     font-size: 2em;
@@ -468,11 +484,20 @@ header h1 span {
     cursor: pointer;
 }
 
+@media screen and (max-width: 900px) {
+    p {
+        font-size: 0.9em;
+    }
+
+    * {
+        overflow: hidden;
+    }
+}
 
 @media screen and (max-width: 600px) {
-    *{
+    * {
         overflow: hidden;
-        font-size: 1em;
+        font-size: small;
     }
 
     /* Sa nu fie acoperit slide-ul de browser controls*/
@@ -480,11 +505,11 @@ header h1 span {
         height: calc(100vh - 50px);
     }
 
-    .dropdown{
+    .dropdown {
         visibility: hidden;
     }
 
-    #drpicon{
+    #drpicon {
         visibility: visible;
         position: absolute;
         top: 1em;
@@ -504,14 +529,14 @@ header h1 span {
         position: relative;
         background-color: rgb(2, 19, 46, 0.8)
     }
-    
+
     .contents {
         color: inherit;
         grid-column: 2;
-        grid-row: 2;
     }
-    
-    .card-right, .card-left{
+
+    .card-right,
+    .card-left {
         grid-column: 1;
         grid-row: span 2;
         display: flex;
@@ -535,7 +560,7 @@ header h1 span {
     .first.main {
         background-color: transparent;
     }
-    
+
     .scroll-button {
         all: unset;
         display: flex;
@@ -551,10 +576,10 @@ header h1 span {
         z-index: 1000;
     }
 
-    .scroll-button.one{
+    .scroll-button.one {
         grid-column: 2;
     }
-    
+
     .arrow {
         position: relative;
         width: 5em;
@@ -567,7 +592,7 @@ header h1 span {
         background: transparent;
         animation: alert 4s linear 3s infinite;
     }
-    
+
     .arrow::before,
     .arrow::after {
         content: "";
@@ -578,22 +603,22 @@ header h1 span {
         border-radius: 1em;
         transition: transform 0.3s linear;
     }
-    
+
     .arrow::before {
         transform: rotate(45deg);
         transform-origin: 95% center;
     }
-    
+
     .arrow::after {
         transform: rotate(-45deg);
         transform-origin: 95% center;
     }
-    
+
     .arrow:hover::before {
         transform: rotate(35deg);
         background-color: rgba(94, 47, 100, 0.9);
     }
-    
+
     .arrow:hover::after {
         transform: rotate(-35deg);
         background-color: rgba(94, 47, 100, 0.9);
@@ -609,7 +634,30 @@ header h1 span {
         grid-row: 2;
     }
 
-    #github, #mail{
+    #github,
+    #mail {
         visibility: hidden;
     }
+
+    .container.canvas {
+        top: 4em;
+        grid-column: 1;
+        grid-row: span 2;
+        margin: 0;
+        padding: 0;
+        z-index: -1;
+        background-color: transparent;
+    }
+
+    .controls {
+        grid-column: 1;
+        grid-row: 3;
+        transform: translateY(-10em);
+    }
+
+    #celestialSphere {
+        height: 60%;
+        width: auto;
+    }
+
 }

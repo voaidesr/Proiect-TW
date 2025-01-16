@@ -6,7 +6,13 @@ function scrollToSlide(slideId) {
 }
 
 function getNextSlideId(currentSlideId) {
-  const slides = ["one", "two", "three", "four"];
+  // same as scrolling.js, doar ca am adaugat id-urile pentru pagina celestial sphere
+  const slides = [
+    "one-celestial",
+    "two-celestial",
+    "three-celestial",
+    "four-celestial",
+  ];
   const currentIndex = slides.indexOf(currentSlideId);
   if (currentIndex !== -1 && currentIndex < slides.length - 1) {
     return slides[currentIndex + 1];
@@ -15,7 +21,12 @@ function getNextSlideId(currentSlideId) {
 }
 
 function getPreviousSlideId(currentSlideId) {
-  const slides = ["one", "two", "three", "four"];
+  const slides = [
+    "one-celestial",
+    "two-celestial",
+    "three-celestial",
+    "four-celestial",
+  ];
   const currentIndex = slides.indexOf(currentSlideId);
   if (currentIndex > 0) {
     return slides[currentIndex - 1];
@@ -71,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleMenuIcon.addEventListener("click", toggleMenu);
 
-  // micsoreaza meniul daca user-ul apasa in afara lui
   document.addEventListener("click", (event) => {
     if (
       !sideMenu.contains(event.target) &&

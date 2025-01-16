@@ -1,38 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding spherical astronomy</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="icon" type="image/x-icon" href="../assets/photos/favicon.ico">
+    <script src="https://kit.fontawesome.com/a80820617e.js" crossorigin="anonymous"></script>
 </head>
-<body class = "slides celestial">
-    <section class = "slide" id = "one-celestial">
-        <header><h1>The celestial sphere - An introduction to positional astronomy</h1></header>
-        <main>
-                <p>In ancient times, humanity believed that the universe was contained within a spherical shell, with the stars fixed upon its surface, equidistant from the Earth, which they imagined as the center of the cosmos. This geocentric perspective, though rooted in early observations and cultural beliefs, has since been proven false by modern science. We now know that the universe is vast, expansive, and far more complex than this early model suggested.</p>
-                <p>However, the simplicity of the celestial sphere remains profoundly useful, even in contemporary astronomy. Why? Because, from our vantage point on Earth, this ancient framework provides an intuitive and practical way to map and measure the heavens. It allows us to study the positions of celestial objects as they appear from our perspective, disregarding the vast differences in their actual distances.</p>
-                <button class="scroll-button" onclick="scrollToNextSlide('two-celestial')">
-                    <div class = "arrow"></div>
-                  </button>
-        </main>
-    </section>
-    <section class = "slide" id = "two-celestial">
-        <header><h1>The celestial sphere - An introduction to positional astronomy</h1></header>
-        <main>
-            <p>
-                Moreover, the celestial sphere enables astronomers to sidestep the complications introduced by Earth's orbital motion around the Sun. Since the distances to stars are astronomically large, the Earth's movement causes only minimal shifts in their observed positions. This allows us to assume, for practical purposes, that all stars are fixed on a sphere of infinite radius centered around the Earth. This assumption simplifies the process of defining star positions and describing their apparent motions across the sky
-            </p>
-            <p>
-                The celestial sphere model has stood the test of time because it bridges the gap between observation and interpretation. It provides a robust framework for understanding celestial mechanics, navigating by the stars, and tracking phenomena such as the apparent motion of constellations, the ecliptic, and the zodiac. Whether used by ancient navigators or modern astronomers, the celestial sphere remains an indispensable tool for exploring the cosmos from our terrestrial home.
-            </p>
-                <button class="scroll-button" onclick="scrollToNextSlide('two-celestial')">
-                    <div class = "arrow"></div>
-                  </button>
-        </main>
-    </section>
-    <section class = "slide" id = "three"></section>
-    <script type="text/javascript" src="../scripts/scrolling.js"></script>
+
+<body>
+    <div class="slides">
+        <section class="slide" id="one-celestial" tabindex="0">
+            <header>
+                <h1>NYX <span>The skyes, at your desk</span> </h1>
+                <div id="side-menu" class="hidden">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="planetarium.html">The Planetarium</a></li>
+                        <li><a href="resources.html">Resources for learning more</a></li>
+                    </ul>
+                </div>
+                <i id="drpicon" class="fa fa-bars" aria-hidden="true"></i>
+                <div class="dropdown">
+                    <button class="dropdownbutton">
+                        Menu
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home</a>
+                        <a href="planetarium.html">The Planetarium</a>
+                        <a href="resources.html">Resources for learning more</a>
+                    </div>
+                </div>
+            </header>
+            <div class="first main">
+                <div class="contents">
+                    <h2>The celestial sphere - An introduction to positional astronomy</h2>
+                    <br />
+                    <p>In ancient times, humanity believed that the universe was contained within a spherical shell,
+                        with the stars fixed upon its surface, equidistant from the Earth, which they imagined as the
+                        center of the cosmos.
+                        <br /><br />
+                        The simplicity of the celestial sphere remains profoundly useful, even in contemporary
+                        astronomy. Why? Because, from our vantage point on Earth, this ancient framework provides an
+                        intuitive and practical way to map and measure the heavens
+                    </p>
+                </div>
+                <div class="scroll-button one">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="two-celestial" tabindex="0">
+            <div class="main">
+                <div class="card-right">
+                    <p>The celestial sphere enables astronomers to sidestep the complications introduced by Earth's
+                        orbital motion around the Sun. Since the distances to stars are astronomically large, the
+                        Earth's movement causes only minimal shifts in their observed positions.
+                        <br /> <br />
+                        This allows us to assume, for practical purposes, that all stars are fixed on a sphere of
+                        infinite radius centered around the Earth. This assumption simplifies the process of defining
+                        star positions and describing their apparent motions across the sky
+                    </p>
+                </div>
+                <div class="scroll-button">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="three-celestial" tabindex="0">
+            <div class="main">
+                <div class="card-left">
+                    <p>This simplification paves the way for the celestial coordinate system, which acts as a universal
+                        map for navigating the heavens.
+                        <br /><br />
+                        By using Right Ascension (RA) and Declination (Dec)—the celestial equivalents of longitude and
+                        latitude—astronomers can precisely pinpoint the location of any star or celestial object.
+                        <br /><br />
+                        RA measures an object’s position eastward along the celestial equator, while Dec indicates its
+                        distance north or south of this imaginary line. Together, these coordinates make it possible to
+                        track the apparent motions of stars as the Earth rotates, ensuring we can observe and study the
+                        cosmos with accuracy and consistency.
+                    </p>
+                </div>
+                <div class="scroll-button">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="four-celestial" tabindex="0">
+            <div class="main">
+                <div class="canvas container">
+                    <canvas id="celestialSphere"></canvas>
+                </div>
+                <div class="controls">
+                    <div class="slider-container">
+                        <label for="raSlider">RA:</label>
+                        <input id="raSlider" type="range" min="0" max="359" value="0">
+                        <span id="raValue">0</span>
+                    </div>
+                    <div class="slider-container">
+                        <label for="decSlider">Dec:</label>
+                        <input id="decSlider" type="range" min="-90" max="90" value="0">
+                        <span id="decValue">0</span>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <p>The celestial sphere enables astronomers to sidestep the complications introduced by Earth's
+                        orbital motion around the Sun. Since the distances to stars are astronomically large, the
+                        Earth's movement causes only minimal shifts in their observed positions.
+                        <br /> <br />
+                        This allows us to assume, for practical purposes, that all stars are fixed on a sphere of
+                        infinite radius centered around the Earth. This assumption simplifies the process of defining
+                        star positions and describing their apparent motions across the sky
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer class="footer" id="footer">
+            <a href="mailto:voaides.r@yahoo.com" id="mail"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+            <a href="https://github.com/voaidesr" id="github"><i class="fa-brands fa-github fa-2xl"></i></a>
+            <p>© 2024 Voaides Robert. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="../scripts/scrolling2.js"></script>
+    <script src="../scripts/celestial.js"></script>
 </body>
+
 </html>
