@@ -9,6 +9,15 @@ import pz from "../assets/textures/background_textures/pz.png";
 import nz from "../assets/textures/background_textures/nz.png";
 import starsJson from "../assets/stars.json";
 import constellationsData from "../assets/constellations.json"; // stele si linii intre constelatii
+// as putea face fetch
+
+// Promise.all([
+//   fetch("../assets/stars.json").then((res) => res.json()),
+//   fetch("../assets/constellations.json").then((res) => res.json()),
+// ])
+//   .then(([starsJson, constellationsData]) => { etc });
+
+// Doar ca am lucrat cu parcel pentru a adauga functionalitate partii care utilizeaza three.js si nu merge fetch-ul
 
 const textureLoader = new THREE.TextureLoader();
 const circleTexture = textureLoader.load(circle);
@@ -42,6 +51,62 @@ function sphericalToCartesian(ra, dec, radius) {
   const z = radius * Math.sin(phi) * Math.sin(theta);
   return { x, y, z };
 }
+
+function createMeteor() {
+  // genereaza meteorit/stea cazatoare
+  const start = new THREE.Vector3(
+    Math.random() * radius * 2 - radius,
+    Math.random() * radius * 2 - radius,
+    Math.random() * radius * 2 - radius
+  )
+    .normalize()
+    .multiplyScalar(radius);
+
+  const end = new THREE.Vector3(
+    start.x + Math.random() * 50 - 25,
+    start.y + Math.random() * 50 - 25,
+    start.z + Math.random() * 50 - 25
+  )
+    .normalize()
+    .multiplyScalar(radius);
+
+  console.log("Meteor created at:", start, "to", end);
+
+  const meteorGeometry = new THREE.BufferGeometry().setFromPoints([start, end]);
+  const meteorMaterial = new THREE.LineBasicMaterial({
+    color: 0xffffff,
+    linewidth: 4,
+    transparent: true,
+    opacity: 1,
+  });
+
+  const meteor = new THREE.Line(meteorGeometry, meteorMaterial);
+  scene.add(meteor);
+
+  // fade out
+  const fadeOutDuration = Math.random() * 1000 + 500; // fadeout in oriunde de la 500ms la 1500ms
+  setTimeout(() => {
+    let opacity = 1;
+    const fadeInterval = setInterval(() => {
+      opacity -= 0.1;
+      if (opacity <= 0) {
+        scene.remove(meteor);
+        clearInterval(fadeInterval);
+      } else {
+        meteorMaterial.opacity = opacity;
+      }
+    }, 50);
+  }, fadeOutDuration);
+}
+
+// generam meteoriti la intervale aleatoare
+function generateMeteors() {
+  setInterval(() => {
+    createMeteor();
+  }, Math.random() * 3000 + 2000); // o stea cazatoare la 2-5s
+}
+
+generateMeteors();
 
 const renderedStars = new Map();
 const constellationObjects = [];
