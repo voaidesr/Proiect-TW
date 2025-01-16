@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700&family=Oswald:wght@300;700&display=swap');
+
+:root {
+    --background-dark: #020304;
+    --spaceblue: #011b45;
+    --darkerblue: #02132e;
+    --ligtherblue: #042252;
+    --violet: #5e2f64;
+    --lighterviolet: #9c6ba8;
+    --accentpink: #ffa8e2;
+    --silver: #d9d9d9;
+    --moonglow: #f4f4f4;
+    --green: #32cd32;
+    --red: #ff4500;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Cairo", sans-serif;
+    background-color: var(--background-dark);
+    color: var(--moonglow);
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darkerblue);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accentpink);
+    border-radius: 10px;
+    border: 3px solid var(--darkerblue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lighterviolet);
+}
+
+#loginPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#loginForm {
+    background: var(--spaceblue);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+#loginForm h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--accentpink);
+    font-family: "Cairo", sans-serif;
+}
+
+#loginForm input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: var(--ligtherblue);
+    color: var(--silver);
+    font-size: 1em;
+    font-family: "Cairo", sans-serif;
+}
+
+.region {
+    position: absolute;
+    border: 2px solid transparent;
+    /* border-color: #ffa8e2; */ 
+    /* aici vezi regiunile */
+}
+
+.region:hover {
+    transform: scale(1.1);
+}
+
+#loginForm button {
+    width: 85%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accentpink);
+    color: var(--moonglow);
+    font-size: 1em;
+    cursor: pointer;
+    font-family: "Cairo", sans-serif;
+    font-weight: bolder;
+}
+
+#loginForm button:hover {
+    background: var(--lighterviolet);
+    color: var(--background-dark);
+}
+
+#gameContainer header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--ligtherblue);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    font-family: "Cairo", sans-serif;
+}
+
+#gameContainer header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: var(--moonglow);
+    font-family: "Cairo", sans-serif;
+}
+
+#score {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: "Cairo", sans-serif;
+}
+
+#score.positive {
+    color: var(--green);
+}
+
+#score.negative {
+    color: var(--red);
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Cairo", sans-serif;
+}
+
+#constellationMap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: url("../assets/photos/stellarium-001.png") no-repeat center center;
+    background-size: contain;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+#actionBar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 120px;
+    background: var(--ligtherblue);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+#actionBar:hover {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+#actionBar button {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background: var(--accentpink);
+    color: var(--background-dark);
+    font-size: 1em;
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    font-family: "Cairo", sans-serif;
+    font-weight: bolder;
+}
+
+#actionBar:hover button {
+    display: block;
+}
+
+#constellation1{
+    top: 10%;
+    left: 48%;
+    width: 5%;
+    height: 30%;
+}
+
+#constellation2{
+    top: 25%;
+    left: 34%;
+    width: 10%;
+    height: 8%;
+}
+
+#constellation3{
+    top: 34%;
+    left: 34%;
+    width: 11%;
+    height: 12%;
+}
+
+#constellation4{
+    top: 45%;
+    left: 49%;
+    width: 7%;
+    height: 6%;
+}
+
+#constellation5{
+    top: 52%;
+    left: 47%;
+    width: 3%;
+    height: 5%;
+}
+
+#constellation6{
+    top: 38%;
+    left: 55%;
+    width: 7%;
+    height: 6%;
+}
+
+#constellation7{
+    top: 25%;
+    left: 63%;
+    width: 8%;
+    height: 14%;
+}
+
+#constellation8{
+    top: 11%;
+    left: 72%;
+    width: 8%;
+    height: 14%;
+}
+
+#constellation9{
+    top: 25%;
+    left: 28%;
+    width: 5%;
+    height: 14%;
+}
+
+#constellation10{
+    top: 66%;
+    left: 40%;
+    width: 12%;
+    height: 14%;
+}
+
+#constellation11{
+    top: 13%;
+    left: 6%;
+    width: 14%;
+    height: 12%;
+}
+
+#constellation12{
+    top: 60%;
+    left: 6%;
+    width: 14%;
+    height: 10%;
+}
+
+#constellation13{
+    top: 76%;
+    left: 55%;
+    width: 10%;
+    height: 18%;
+}
+
+#constellation14{
+    top: 30%;
+    left: 89%;
+    width: 6%;
+    height: 14%;
+}
