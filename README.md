@@ -1,16 +1,28 @@
 ### Cerințe generale minimale pentru partea 1 (HTML + CSS):
 
 - [X] fișiere separate pentru HTML și CSS
-- conținutul site-ului trebuie să aibă sens (nu îl umpleți cu Lorem ipsum)
-- nu este acceptată folosirea de frameworkuri și biblioteci
+Fisiere HTML pentru fiecare pagina, fisiere css diferite pentru stiluri diferite.
+- [X] conținutul site-ului trebuie să aibă sens (nu îl umpleți cu Lorem ipsum)
+- [ ] nu este acceptată folosirea de frameworkuri și biblioteci
+Imi pare rau, am incercat sa compnensez si outside three.js
 
 HTML:
-- trecerea testelor de validare HTML http://validator.w3.org/
-- folosirea tagurilor semantice prezentate la curs/laborator
+- [X] trecerea testelor de validare HTML http://validator.w3.org/
+- [X] folosirea tagurilor semantice prezentate la curs/laborator
 
 CSS:
-- trecerea testelor de validare CSS https://jigsaw.w3.org/css-validator/
-- site-ul trebuie să fie responsive (media query, unități relative, tipuri de display)
+- [X] trecerea testelor de validare CSS https://jigsaw.w3.org/css-validator/
+- [X] site-ul trebuie să fie responsive (media query, unități relative, tipuri de display)
+Media query utilizat in main css, home.css:
+```javascript
+@media screen and (max-width: 600px) {
+    * {
+        overflow: hidden;
+        font-size: small;
+    }
+    // etc
+}
+```
 - folosirea selectorilor CSS de bază (după id, clasă, tag, elementContinut, elementCopil, al n-lea copil de tipul unui tag :nth-of-type)
 - specificarea proprietăților: width, height, color, background, font-size, border, padding, margin, display etc.
 - folosirea coloanelor pentru layoutul a cel puțin unei pagini; realizarea layoutului fără tabele (folosind flex și grid)
