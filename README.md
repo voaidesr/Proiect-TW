@@ -98,7 +98,7 @@ A. JavaScript
 ```javascript
 const loginPopup = document.getElementById("loginPopup");
 ```  
--[ ] crearea și stergerea de elemente HTML  
+- [ ] crearea și stergerea de elemente HTML  
 *(Nu se pune ca element html, dar am lucrat cu obiecte in three.js si nu am avut sansa sa adaug elemente html)*
 ```javascript
 const lineMesh = new THREE.Line(lineGeometry, lineMaterial);
