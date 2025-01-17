@@ -209,12 +209,12 @@ regions.forEach((region) => {
   })
 })
 ```  
-- []validarea datelor dintr-un formular folosind expresii regulate
+- [ ] validarea datelor dintr-un formular folosind expresii regulate
 *(Imi pare rau, ma gandeam sa fac un formular de contact/sugestii, dar nu am mai apucat)*  
 *(Haven't tackled it, dar asa as fi facut-o)*  
 
 B. AJAX
-- []cereri Ajax cu preluare date dintr-un fișier json
+- [ ] cereri Ajax cu preluare date dintr-un fișier json
 *(Am vrut sa fac, dar nu am reusit cu parcel)*  
 - sesiuni: e.g. login/logout (folosind Storage / fișier json) 
 *(Login pentru The Constellation Game)*  
