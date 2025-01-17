@@ -99,14 +99,14 @@ A. JavaScript
 const loginPopup = document.getElementById("loginPopup");
 ```  
 - [ ]crearea și stergerea de elemente HTML
-*(Nu se pune ca element html, dar am lucrat cu obiecte in three.js si nu am avut sansa sa adaug elemente html)  
+*(Nu se pune ca element html, dar am lucrat cu obiecte in three.js si nu am avut sansa sa adaug elemente html)*
 ```javascript
 const lineMesh = new THREE.Line(lineGeometry, lineMaterial);
     constellationObjects.push(lineMesh); // mentine linia pentru toggling
     scene.add(lineMesh);
 ```  
 - [X] folosirea și modificarea evenimentelor generate de mouse si tastatură
-*(mai multe eventlistener-uri pentur click sau taste: arrowdown, arroup)  
+*(mai multe eventlistener-uri pentur click sau taste: arrowdown, arroup)*
 ```javascript
 document.addEventListener("keydown", function (event) {
   const currentSlide = document
@@ -182,6 +182,8 @@ function createMeteor() {
   )
     .normalize()
     .multiplyScalar(radius);
+    // etc
+}
 ```  
 - [X] folosirea proprietăților classList, target sau currentTarget
 *(Utilizez, pentru meniul de telefon din homepage, pentru a determina daca click-ul este in meniu sau in afara meniului)*  
@@ -204,8 +206,8 @@ regions.forEach((region) => {
   document.getElementById(region.id).addEventListener("click", (event) => {
     event.stopPropagation(); 
     // etc
-  }
-}
+  })
+})
 ```  
 - [ ]validarea datelor dintr-un formular folosind expresii regulate
 *(Imi pare rau, ma gandeam sa fac un formular de contact/sugestii, dar nu am mai apucat)*  
