@@ -3,8 +3,8 @@
 - [X] fișiere separate pentru HTML și CSS
 Fisiere HTML pentru fiecare pagina, fisiere css diferite pentru stiluri diferite.
 - [X] conținutul site-ului trebuie să aibă sens (nu îl umpleți cu Lorem ipsum)
-- [ ] nu este acceptată folosirea de frameworkuri și biblioteci
-Imi pare rau, am incercat sa compnensez si outside three.js
+- [ ] nu este acceptată folosirea de frameworkuri și biblioteci  
+Imi pare rau, am incercat sa compensez si outside three.js
 
 HTML:
 - [X] trecerea testelor de validare HTML http://validator.w3.org/
